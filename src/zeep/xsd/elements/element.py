@@ -166,7 +166,7 @@ class Element(Base):
                     if etree.QName(elem.tag) == self.qname.localname:
                         xmlelement = elem
                         break
-                if xmlelement:
+                if xmlelement is not None:
                     xmlelements.remove(xmlelement)
                     num_matches += 1
                     item = self.parse(xmlelement, schema, allow_none=True, context=context)
